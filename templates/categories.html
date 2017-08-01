@@ -1,0 +1,119 @@
+<header class="txt-clr-white abs top0 left0">{{title}} - categories</header>
+<div class="ht-8 full-width parent rel hidden boxed crop" id="categories">
+	<div class="fxd top0 right0 visible-sm visible-xs ht-1" id="menu_nav">
+		<span class="bck-clr-red txt-clr-white glyphicon glyphicon-menu-hamburger"></span>
+	</div>
+	<div class="ht-1 rel full-width" id="pagetitle">
+		<div class="abs bottom0">
+			<h1 class="ft-title text-uppercase txt-clr-red">Categories</h1>
+			<h4 class="ft-content txt-clr-dark">Things I do</h4>
+		</div>
+	</div>
+	<div class="ht-7 full-width">
+		<div class="full-width rel" id="category-list">
+			<ul class="nav ft-title nav-pills compressed">
+				<li class="bck-clr-black" ng-repeat="item in categories"><a class="text-uppercase txt-clr-white animate05" data-category="{{item}}">{{item}}</a></li>
+			</ul>
+		</div>
+		<div class="rel ht-1 wcenter cropped-width hidden-xs hidden-sm" id="mainnav" ng-include="'templates/nav.html'">
+		</div>
+		<div class="hidden-xs hidden-sm" id="category_content_wrapper">
+			<div class="abs right0 top0" id="category_content">
+				<div id="inner-content">
+					<div class="visible-sm visible-xs fxd top0 left0 ht-1 wd-1" id="close-cat">
+						<span class="glyphicon glyphicon-remove txt-clr-white"></span>
+					</div>
+					<div class="persona-name top0 ft-title txt-clr-white text-uppercase text-center"></div>
+					<div class="persona">
+						<div class="persona-type" id="code">
+							<div class="face"></div>
+							<div class="special animate05">
+							    <img src="img/HTML5.png" class="rolling" style="top: 5%;">
+							    <img src="img/angular.png" class="rolling" style="top: -25%; left: 37%;">
+							    <img src="img/mongoDb.png" class="rolling" style="left: 70%;">
+							    <img src="img/nodeJs.png" class="rolling" style="top: 60%; left: 3%;">
+							    <img src="img/reactJs.png" class="rolling" style="top: 60%; left: 73%;">
+							    <img src="img/css3.png" class="rolling" style="top: 80%; left: 37%;">
+							</div>
+							<div class="top animate05"></div>
+							<div class="bottom animate05"></div>
+							<div class="shoes"></div>
+						</div>
+						<div class="persona-type" id="cuisine">
+							<div class="face"></div>
+							<div class="special animate05"></div><div class="top animate05"></div>
+							<div class="bottom animate05"></div>
+							<div class="shoes"></div>
+						</div>
+						<div class="persona-type" id="cartoons">
+							<div class="face"></div>
+							<div class="special animate05"></div><div class="top animate05"></div>
+							<div class="bottom animate05"></div>
+							<div class="shoes"></div>
+						</div>
+						<div class="persona-type" id="clicked">
+							<div class="face"></div>
+							<div class="special animate05"></div><div class="top animate05"></div>
+							<div class="bottom animate05"></div>
+							<div class="shoes"></div>
+						</div>
+						<div class="persona-type" id="cussing">
+							<div class="face"></div>
+							<div class="special animate05"></div><div class="top animate05"></div>
+							<div class="bottom animate05"></div>
+							<div class="shoes"></div>
+						</div>
+						<div class="persona-type" id="creativity">
+							<div class="face"></div>
+							<div class="special animate05"></div><div class="top animate05"></div>
+							<div class="bottom animate05"></div>
+							<div class="shoes"></div>
+						</div>
+						<div class="persona-type active ok" id="default">
+							<div class="face"></div>
+							<div class="special animate05"></div><div class="top animate05"></div>
+							<div class="bottom animate05"></div>
+							<div class="shoes"></div>
+						</div>
+					</div>
+					<div class="full-width">
+						<div class="persona-content text-center txt-clr-white" data-id="code">
+							<h1 class="text-center ft-content">I write <s>awwsome</s> awesome code</h1>
+							<p class="ft-content">I love anything remotely related to UI. If it doesn't have a visually appealing output, scratch it and start over!</p>
+							<a class="inblk btn btn-outer txt-clr-white border-radius0 autowd btn-lg">Check em out!</a>
+						</div>
+						<div class="persona-content text-center txt-clr-white" data-id="cuisine">
+							<h1 class="text-center ft-content">I love food</h1>
+							<p class="ft-content">From cooking (and setting my kitchen on fire) to finding out the best places to eat around any place I stay</p>
+							<a class="inblk btn btn-outer txt-clr-white border-radius0 autowd btn-lg">My food reviews</a>
+
+						</div>
+						<div class="persona-content text-center txt-clr-white" data-id="cartoons">
+							<h1 class="text-center ft-content">I make cartoons</h1>
+							<p class="ft-content">I used to dream of being the Indian Stan lee but that hasn't happened as yet (fingers crossed). But until then, I'll keep making my own version of crappy cartoons.</p>
+							<a class="inblk btn btn-outer txt-clr-white border-radius0 autowd btn-lg">My Toons</a>
+						</div>
+						<div class="persona-content text-center txt-clr-white" data-id="clicked">
+							<h1 class="text-center ft-content">I am a shutterbug</h1>
+							<p class="ft-content">You know that one creepy guy who takes your photos when you aren't looking? Yep. We call it candid photography and I do it a lot.</p>
+							<a class="inblk btn btn-outer txt-clr-white border-radius0 autowd btn-lg">My Photo Feed</a>
+						</div>
+						<div class="persona-content text-center txt-clr-white" data-id="cussing">
+							<h1 class="text-center ft-content">I love ranting</h1>
+							<p class="ft-content">It so happens that after 18 hours of working a day, you tend to develop philosophies of your own. I love talking about issues from Trump to Dumps, from Moody to Modi, well.. you get the gist.</p>
+							<a class="inblk btn btn-outer txt-clr-white border-radius0 autowd btn-lg">My Thought-a-logs</a>
+						</div>
+						<div class="persona-content text-center txt-clr-white" data-id="creativity">
+							<h1 class="text-center ft-content">I create</h1>
+							<p class="ft-content">So what do I do when not working? I draw cartoons. Or I just start painting or designing random things which I then put around my house. Luckily my parents threw me out so now I can design stuff without expecting feedback or flying angry shoes.</p>
+							<a class="inblk btn btn-outer txt-clr-white border-radius0 autowd btn-lg">My Artwork</a>
+						</div>
+						<div class="persona-content text-center txt-clr-white" data-id="default"></div>
+					</div>
+				</div>
+			</div>
+			<div class="abs right0 top0 bck-clr-red animate05" id="category_content_inner"></div>
+			<div class="abs right0 top0 bck-clr-red animate02" id="category_content_outer"></div>
+		</div>
+	</div>
+</div>
