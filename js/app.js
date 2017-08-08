@@ -1,5 +1,5 @@
 /**
- * Script for mobile web VIP. 
+ * Script for mobile web VIP.
  * @auther dkarthikeyan
  */
 /*global $,mskuSpec, jQuery, SAJAX, MH */
@@ -52,12 +52,8 @@ function mapNav(){
         e.preventDefault();
         if(!$(this).hasClass('active')){
             var url = $(this).attr('href');
-            var pos = $(this).offset();
-            if( $(window).width()>600 ){
-                PageChange(pos['top'], pos['left'], url);
-            }else{
-                PageChange(e.pageX, e.pageY, url);
-            }
+						debugger;
+            PageChange(e.pageX, e.pageY, url);
         }
     });
 }
@@ -70,13 +66,14 @@ function homePage(){
         $('#main-nav').removeClass('bottom40 hided');
         $('#mini-me img').removeClass('mrg-top-1');
         $('#title').removeClass('bottom40 hided');
-        
+				$('#mini-me').removeClass('hidden');
     }, 500);
-    
+
 }
 
 function categories(){
     window.setTimeout(function(){
+				$('#sitetitle').removeClass('hidden');
         $('#category-list ul').removeClass('compressed');
         $('#category-list li a').click(function(){
             $('#category-list li a.active').removeClass('active');
@@ -84,6 +81,7 @@ function categories(){
             var thisref = $(this).attr('data-category');
             changeCategory(thisref);
         });
+				$('#code .special').append('<img src="img/HTML5.png" class="rolling" style="top: 5%;"> <img src="img/angular.png" class="rolling" style="top: -25%; left: 37%;"> <img src="img/mongoDb.png" class="rolling" style="left: 70%;"> <img src="img/nodeJs.png" class="rolling" style="top: 60%; left: 3%;"> <img src="img/reactJs.png" class="rolling" style="top: 60%; left: 73%;"> <img src="img/css3.png" class="rolling" style="top: 80%; left: 37%;">');
         if( $(window).width()>600 ){
             window.setTimeout(function(){
                 $('#category-list li a:first').click();
@@ -101,11 +99,24 @@ function categories(){
 function character(){
     window.setTimeout(function(){
         $('#character').removeClass('hidden');
+				$('#sitetitle').removeClass('hidden');
         window.setTimeout(function(){
             $('#keywordmap .profile-pic img').removeClass('shift');
             $('#keywordmap .cloud-pic img').removeClass('shift');
+						$('.hold').each(function(){
+							var perc = parseInt($(this).attr('data-size'));
+							var deg = Math.round(360 * perc/100);
+							var shiftdeg = (360-deg);
+							$(this).css({ WebkitTransform: 'rotate(' + deg + 'deg)'});
+							$(this).css({ '-moz-transform': 'rotate(' + deg + 'deg)'});
+							$(this).find('.pie').css({ WebkitTransform: 'rotate(' + shiftdeg + 'deg)'});
+							$(this).find('.pie').css({ '-moz-transform': 'rotate(' + shiftdeg + 'deg)'});
+							var inblk = $(this).find('.pie');
+							//$(this).css({'-webkit-transform':'rotate('+deg+'deg)';'-moz-transform':'rotate('+deg+'deg)';'-o-transform':'rotate('+deg+'deg)';'transform':'rotate('+deg+'deg)';});
+							//$(this).find('.pie').css({'-webkit-transform':'rotate('+shiftdeg+'deg)';'-moz-transform':'rotate('+shiftdeg+'deg)';'-o-transform':'rotate('+shiftdeg+'deg)';'transform':'rotate('+shiftdeg+'deg)';});
+						})
         },300);
-        
+
         main_menu();
     },200);
 }
@@ -113,6 +124,7 @@ function character(){
 function contact(){
     window.setTimeout(function(){
         $('#contact').removeClass('hidden');
+				$('#sitetitle').removeClass('hidden');
         main_menu();
     },200);
 }
@@ -141,23 +153,30 @@ function changeCategory(name){
             },200);
         },500);
     },100);
-    
+
 }
 
 function main_menu(){
     $('#main-nav').removeClass('bottom40 hided');
+		$('#mini-me').removeClass('hidden hidden-lg hidden-md');
+		window.setTimeout(function(){
+			$('#mini-me img').removeClass('peep');
+		},200);
     $('#menu_nav').click(function(){
         if( $(this).find('span').hasClass('glyphicon-menu-hamburger') ){
             $(this).find('span').addClass('glyphicon-remove').removeClass('glyphicon-menu-hamburger');
             $('#mainnav').removeClass('hidden-xs hidden-sm');
+						$('#modal').removeClass('hidden');
             window.setTimeout(function(){
+								$('#mainnav').removeClass('sift');
                 $('#mini-me img').removeClass('mrg-top-1');
-            },200);
+            },100);
         }else{
             $(this).find('span').removeClass('glyphicon-remove').addClass('glyphicon-menu-hamburger');
-            $('#mainnav').addClass('hidden-xs hidden-sm');
+            $('#mainnav').addClass('hidden-xs hidden-sm sift');
+						$('#modal').addClass('hidden');
             $('#mini-me img').addClass('mrg-top-1');
-        }       
+        }
     });
 }
 
@@ -167,32 +186,32 @@ angular
 	.module('app',[
 		'ui.router'
 		])
-	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
+	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider, $stateProvider){
 		$urlRouterProvider.otherwise('/');
 		$stateProvider
 			.state('home',{
 				url:'/',
 				templateUrl:'templates/home.html',
-                controller:'pageLoad'
+        controller:'pageLoad'
 			})
 			.state('categories',{
 				url:'/categories',
 				templateUrl:'templates/categories.html',
-                controller:'pageLoad'
+        controller:'pageLoad'
 			})
 			.state('character',{
 				url:'/character',
 				templateUrl:'templates/character.html',
-                controller:'pageLoad'
+        controller:'pageLoad'
 			})
 			.state('contact',{
 				url:'/contact',
 				templateUrl:'templates/contact.html',
-                controller:'pageLoad'
+        controller:'pageLoad'
 			})
-            .state('post',{
-                url:'/post',
-                templateUrl:'templates/post.html',
-                controller:'pageLoad'
-            })
+      .state('post',{
+        url:'/post',
+        templateUrl:'templates/post.html',
+        controller:'pageLoad'
+      })
 	}])

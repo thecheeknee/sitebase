@@ -1,0 +1,89 @@
+[
+  {
+    "page":"home",
+    "path":"templates/home.html"
+  },
+  {
+    "page":"categories",
+    "path":"templates/categories.html",
+    "persona":[
+      {
+        "persona name":"code",
+        "persona-content":{
+          "title":"<span>I write <s>awwsome</s> awesome code</span>",
+          "content":"I love anything remotely related to UI. If it doesn't have a visually appealing output, scratch it and start over!",
+          "link":"http://google.in","link-text":"Check em out!"
+        }
+      },
+      {
+        "persona name":"cuisine",
+        "persona-content":{
+          "title":"I love food",
+          "content":"From cooking (and setting my kitchen on fire) to finding out the best places to eat around any place I stay",
+          "link":"http://google.in","link-text":"My food reviews!"
+        }
+      },
+      {
+        "persona name":"cartoons",
+        "persona-content":{
+          "title":"I make cartoons",
+          "content":"I love anything remotely related to UI. If it doesn't have a visually appealing output, scratch it and start over!",
+          "link":"http://google.in","link-text":"Check em out!"
+        }
+      },
+      {
+        "persona name":"cussing",
+        "persona-content":{
+          "title":"I rant a lot",
+          "content":"I love anything remotely related to UI. If it doesn't have a visually appealing output, scratch it and start over!",
+          "link":"http://google.in","link-text":"Check em out!"
+        }
+      },
+      {
+        "persona name":"clicked",
+        "persona-content":{
+          "title":"I shutter bug",
+          "content":"I love anything remotely related to UI. If it doesn't have a visually appealing output, scratch it and start over!",
+          "link":"http://google.in","link-text":"Check em out!"
+        }
+      },
+      {
+        "persona name":"creativity",
+        "persona-content":{
+          "title":"I think I am creative",
+          "content":"I love anything remotely related to UI. If it doesn't have a visually appealing output, scratch it and start over!",
+          "link":"http://google.in","link-text":"Check em out!"
+        }
+      }
+    ]
+  },
+  {
+    "page":"character",
+    "path":"templates/character.html",
+    "info":[
+      {
+        "name":"About Me",
+        "content":"I am Shrinivas Acharya, a budding full stack developer + visualiser from India. I have been working on web projects for 6 years and have recently moved into full fledged Javascript UX. I am currently learning and falling in love with NodeJs, MongoDB and working on upgrading this site to a full fledged site that would run on MEAN stack. I also like to create tiny experiments that I will be uploading here and sharing links.",
+        "extrainfo":{
+          "title":"Things I am good at",
+          "graph":[
+            {"UX conceptualisation":70},
+            {"Front End Wireframing":90},
+            {"Front End Development":75},
+            {"Responsive Design":85},
+            {"Backend Development":50},
+            {"Cross browser testing":80},
+            {"Graphic Design":60},
+            {"Photography & Video Editing":50},
+            {"Storyboarding":40}
+          ],
+          "footnote":"I solemnly swear to Google things I do not know until I get a solution."
+        }
+      }
+    ]
+  },
+  {
+    "page":"contact",
+    "path":"templates/contact.html"
+  }
+]
