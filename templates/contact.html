@@ -1,28 +1,83 @@
 <header class="txt-clr-white abs top0 left0">{{title}} - contact</header>
+<div class="fxd top0 right0 visible-sm visible-xs" id="menu_nav">
+	<span class="bck-clr-red txt-clr-white glyphicon glyphicon-menu-hamburger"></span>
+</div>
 <div class="ht-8 full-width parent rel hidden boxed" id="categories">
-	<div class="fxd top0 right0 visible-sm visible-xs" id="menu_nav">
-		<span class="bck-clr-red txt-clr-white glyphicon glyphicon-menu-hamburger"></span>
-	</div>
-	<div class="wcenter cropped-width">
+	<div class="col-lg-10 col-md-9 col-xs-12">
 		<div class="row">
 			<div class="col-lg-7 col-sm-12 col-xs-12">
 				<div class="ht-1 rel full-width" id="pagetitle">
 					<div class="abs bottom0">
 						<h1 class="ft-title text-uppercase txt-clr-red">Contact</h1>
-						<h4 class="ft-content txt-clr-dark">Get in touch with me</h4>
+						<h4 class="ft-title txt-clr-dark">Get in touch with me</h4>
 					</div>
 				</div>
 				<div class="clearfix"></div>
-				
+				<div class="contact-blurb rel">
+					<h3 class="txt-clr-dark ft-title">So let's make this simple for you</h3>
+					<h5 class="txt-clr-black ft-content">Just click the tags below and I'll draft a mail for you</h5>
+				</div>
+				<div class="clearfix">&nbsp;</div>
+				<div class="row row-eq-height">
+					<div class="col-sm-3 hidden-xs"></div>
+					<div class="col-sm-9 col-xs-12 boxed">
+						<div class="clearfix">&nbsp;</div>
+						<span class="label tagged label-default pull-left bck-clr-blue" toggle-class ng-repeat="tag in contact.tags">
+							<span ng-repeat="(tagname,tagtype) in tag" class="animate05" ng-click="addTag(tagname,tagtype)">
+								{{tagname}}<span class="badge animate05">+</span>
+							</span>
+						</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="row hidden-xs hidden-sm">
+					<h3 class="col-sm-12 ft-title txt-clr-blue">You can also find me on:</h3>
+					<div class="clearfix">&nbsp;</div>
+					<div class="col-sm-3 contactblock" ng-repeat="link in contact.contactme">
+						<a href="{{v}}" class="{{k}} blk full-width ft-content ht-1 rel" ng-repeat="(k,v) in link">
+							<span class="abs blk full-width bottom0 txt-clr-whitest left0 text-center">{{k}}</span>
+						</a>
+					</div>
+				</div>
 				<div class="clearfix"></div>
-				<div class="rel ht-1 wcenter full-width hidden-xs hidden-sm" id="mainnav" ng-include="'templates/nav.html'"></div>
 			</div>
 			<div class="col-lg-5 col-sm-12 col-xs-12">
-
+				<form id="contactmeform" class="hided animate10">
+					<div class="mrg-top-1 hidden-xs hidden-sm"></div>
+					<div class="row">
+						<div class="col-xs-12 col-lg-12">
+							<h3 class="ft-title txt-clr-blue">Awesome! Now tell me who you are and how to reach you.</h3>
+							<div class="form-group">
+								<input type="text" class="form-control" id="contactname" ng-model="contactname" placeholder="name">
+							</div>
+							<div class="form-group">
+								<input type="email" class="form-control" id="contactemail" ng-model="contactemail" placeholder="Email">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-lg-12">
+							<div class="form-group">
+								<textarea class="form-control" id="messageBox" ng-model="message"></textarea>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-default">Send Mail</button>
+							</div>
+						</div>
+					</div>
+				</form>
 				<div class="clearfix"></div>
+				<div class="row visible-xs visible-sm">
+					<div class="col-sm-3 col-xs-6 contactblock" ng-repeat="link in contact.contactme">
+						<a href="{{v}}" class="{{k}} blk full-width boxed ft-content ht-1 rel" ng-repeat="(k,v) in link">
+							<span class="abs blk full-width bottom0 txt-clr-whitest left0 text-center">{{k}}</span>
+						</a>
+					</div>
+				</div>
 			</div>
-			<div class="visible-xs visible-sm col-sm-12 col-xs-12" ng-include="'templates/about.html'">
-			</div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
+	<div class="ht-8 fxd bck-clr-blue top0 right0 col-lg-1 col-md-2 col-sm-4 col-xs-10 wcenter animate02 hidden-xs hidden-sm sift" id="mainnav" ng-include="'templates/nav.html'"></div>
+	<div class="ht-8 full-width fxd top0 right0 bck-clr-dark hidden-lg hidden" id="modal"></div>
 </div>

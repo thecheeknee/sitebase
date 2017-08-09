@@ -1,32 +1,104 @@
 <header class="txt-clr-white abs top0 left0">{{title}} - character</header>
+<div class="fxd top0 right0 visible-sm visible-xs" id="menu_nav">
+	<span class="bck-clr-red txt-clr-white glyphicon glyphicon-menu-hamburger"></span>
+</div>
 <div class="ht-8 full-width parent rel hidden boxed" id="categories">
-	<div class="fxd top0 right0 visible-sm visible-xs" id="menu_nav">
-		<span class="bck-clr-red txt-clr-white glyphicon glyphicon-menu-hamburger"></span>
+	<div class="ht-1 rel col-lg-12 col-xs-12" id="pagetitle">
+		<div class="abs bottom0">
+			<h1 class="ft-title text-uppercase txt-clr-red">Character</h1>
+			<h4 class="ft-title txt-clr-dark">About Me</h4>
+		</div>
 	</div>
-	<div class="wcenter cropped-width">
+	<div class="col-lg-10 col-md-9 col-xs-12">
 		<div class="row">
 			<div class="col-lg-7 col-sm-12 col-xs-12">
-				<div class="ht-1 rel full-width" id="pagetitle">
-					<div class="abs bottom0">
-						<h1 class="ft-title text-uppercase txt-clr-red">Character</h1>
-						<h4 class="ft-content txt-clr-dark">About Me</h4>
+				<div class="ht-7 full-width hidden-xs hidden-sm crop">
+					<div class="ht-7 scroll">
+						<div class="full-screen text-left" ng-repeat="list in character">
+							<h1 class="ft-title txt-clr-blue">{{list.name}}</h1>
+							<p>{{list.content}}</p>
+							<h3 class="ft-title txt-clr-blue" ng-show="list.extrainfo != null">{{list.extrainfo.title}}</h3>
+							<div class="ht-2 full-width" ng-show="list.extrainfo != null">
+								<div class="pull-left graph ht-2 boxed" ng-repeat="obj in list.extrainfo.graph">
+									<div class="full-width ht-2" ng-repeat="(key, val) in obj">
+										<div class="rel wcenter full-screen border-radius50">
+											<div class="pieContainer top0">
+												<div class="pieBackground top0"></div>
+												<div class="piehole top0 left0"></div>
+												<div data-id="{{key}}" class="hold animate10 top0" data-size="{{val}}"><div class="pie animate20 top0"></div></div>
+											</div>
+										</div>
+										<div class="text-center txt-clr-dark ft-title">{{key}}</div>
+									</div>
+								</div>
+								<div class="pull-right wd-3 graph-help">
+									<div class="ft-title txt-clr-red row">
+										<div class="pull-left wd-1"><span class="bck-clr-green blk full-width"></span></div>
+										<div class="pull-left"><span class="txt-clr-dark blk text-left">What I know</span></div>
+									</div>
+									<div class="clearfix">&nbsp;</div>
+									<div class="ft-title txt-clr-red row">
+										<div class="pull-left wd-1"><span class="bck-clr-shade blk full-width"></span></div>
+										<div class="pull-left"><span class="txt-clr-dark blk text-left">Stuff I google</span></div>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix">&nbsp;</div>
+							<blockquote class="ft-title txt-clr-blue">{{list.extrainfo.footnote}}</blockquote>
+							<div class="clearfix">&nbsp;</div>
+						</div>
 					</div>
 				</div>
-				<div class="ht-5 full-width hidden-xs hidden-sm" ng-include="'templates/about.html'">
-				</div>
-				<div class="rel ht-1 wcenter full-width hidden-xs hidden-sm" id="mainnav" ng-include="'templates/nav.html'"></div>
 			</div>
 			<div class="col-lg-5 col-sm-12 col-xs-12" id="keywordmap">
-				<div class="profile-pic pull-left boxed crop ht-8 rel">
-					<img src="img/profile-pic.jpg" class="full-width shift abs top0 right0 animate10">
+				<div class="profile-pic pull-left boxed crop ht-7 rel">
+					<img src="img/profile-pic.jpg" class="ht-7 abs top0 right0 animate10 shift">
 				</div>
-				<div class="cloud-pic pull-left boxed crop ht-8 rel">
-					<img src="img/cloud.png" class="full-width shift abs top0 left0 animate10">
+				<div class="cloud-pic pull-left boxed crop ht-7 rel">
+					<img src="img/cloud.png" class="abs ht-7 top0 left0 animate10 shift">
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			<div class="visible-xs visible-sm col-sm-12 col-xs-12" ng-include="'templates/about.html'">
+			<div class="visible-xs visible-sm col-sm-12 col-xs-12">
+				<div class="full-screen text-left" ng-repeat="list in character">
+					<h1 class="ft-title txt-clr-blue">{{list.name}}</h1>
+					<p>{{list.content}}</p>
+					<h3 class="ft-title txt-clr-blue" ng-show="list.extrainfo != null">{{list.extrainfo.title}}</h3>
+					<div class="ht-2 full-width" ng-show="list.extrainfo != null">
+						<div class="pull-left graph ht-2 boxed" ng-repeat="obj in list.extrainfo.graph">
+							<div class="full-width ht-2" ng-repeat="(key, val) in obj">
+								<div class="rel wcenter full-screen border-radius50">
+									<div class="pieContainer top0">
+										<div class="pieBackground top0"></div>
+										<div class="piehole top0 left0"></div>
+										<div data-id="{{key}}" class="hold animate10 top0" data-size="{{val}}"><div class="pie animate20 top0"></div></div>
+									</div>
+								</div>
+								<div class="text-center txt-clr-dark ft-title">{{key}}</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="full-screen graph-help">
+							<div class="ft-title txt-clr-red row">
+								<div class="pull-left wd-1"><span class="bck-clr-green blk full-width"></span></div>
+								<div class="pull-left"><span class="txt-clr-dark blk text-left">What I know</span></div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="ft-title txt-clr-red row">
+								<div class="pull-left wd-1"><span class="bck-clr-shade blk full-width"></span></div>
+								<div class="pull-left"><span class="txt-clr-dark blk text-left">Stuff I google</span></div>
+							</div>
+						</div>
+						<div class="clearfix">&nbsp;</div>
+						<blockquote class="ft-title txt-clr-red">{{list.extrainfo.footnote}}</blockquote>
+						<div class="clearfix">&nbsp;</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<div class="ht-8 fxd bck-clr-blue top0 right0 col-lg-1 col-md-2 col-sm-4 col-xs-10 animate02 hidden-xs hidden-sm sift" id="mainnav" ng-include="'templates/nav.html'"></div>
+	<div class="ht-8 full-width fxd top0 right0 bck-clr-dark hidden-lg hidden" id="modal"></div>
+	<div class="clearfix"></div>
 </div>
