@@ -16,7 +16,7 @@ function checkPage(){
     }
     $('#screenchange').removeClass('expanded').addClass('compressed');
     $('.boxed').removeClass('hidden');
-    console.log(location.hash);
+    //console.log(location.hash);
     switch(finalurl){
         case 'categories':
             categories();
@@ -52,7 +52,6 @@ function mapNav(){
         e.preventDefault();
         if(!$(this).hasClass('active')){
             var url = $(this).attr('href');
-						debugger;
             PageChange(e.pageX, e.pageY, url);
         }
     });
@@ -67,7 +66,15 @@ function homePage(){
         $('#mini-me img').removeClass('mrg-top-1');
         $('#title').removeClass('bottom40 hided');
 				$('#mini-me').removeClass('hidden');
-    }, 500);
+				window.setTimeout(function() {
+					$('#cheekneeblock .bck-clr-whitest').addClass('hided');
+					$('#cheekneeblock .bck-clr-whitest h3').hide();
+					window.setTimeout(function() {
+						$('#cheekneeblock .bck-clr-whitest p').show();
+						$('#cheekneeblock .bck-clr-whitest').removeClass('hided');
+					},500);
+				},2000);
+    }, 200);
 
 }
 
@@ -184,7 +191,8 @@ function main_menu(){
 /*angular functions*/
 angular
 	.module('app',[
-		'ui.router'
+		'ui.router',
+		'ngStorage'
 		])
 	.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider, $stateProvider){
 		$urlRouterProvider.otherwise('/');
@@ -215,3 +223,17 @@ angular
         controller:'pageLoad'
       })
 	}])
+	.directive("toggleClass", function() {
+	  return {
+	    link: function($scope, element, attr) {
+	      element.on("click", function() {
+	        element.toggleClass("added");
+					if($('.added').length>0){
+						$('#contactmeform').removeClass('hided');
+					}else{
+						$('#contactmeform').addClass('hided');
+					}
+	      });
+	    }
+	  }
+	});

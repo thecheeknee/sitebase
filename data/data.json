@@ -1,7 +1,9 @@
 [
   {
     "page":"home",
-    "path":"templates/home.html"
+    "path":"templates/home.html",
+    "message":"I just rolled in. What's up?",
+    "returnmessage":"Oh Hi. You are back!"
   },
   {
     "page":"categories",
@@ -84,6 +86,15 @@
   },
   {
     "page":"contact",
-    "path":"templates/contact.html"
+    "path":"templates/contact.html",
+    "tags":[
+      {"html layouts":"development"},{"UX design":"development"},{"backend code":"development"},{"full stack":"development"},{"graphics":"design"},{"logos":"design"},{"PR campaigns":"awareness"},{"Social Media Marketing":"awareness"},{"Social Media Marketing":"awareness"},{"video":"design"},{"cartoon":"design"}, {"presentation":"design"}
+    ],
+    "contactme":[
+      {"facebook":"https://www.facebook.com/thecheeknee"},
+      {"twitter":"https://twitter.com/Shawn3mon"},
+      {"email":"mailto:acharya.shrinivas@gmail.com"},
+      {"linkedIn":"https://www.linkedin.com/in/shrinivas-acharya-077baa73/"}
+    ]
   }
 ]
